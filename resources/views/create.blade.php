@@ -16,30 +16,38 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
                 <div class="form-group">
-                    <strong>Tarea:</strong>
-                    <input type="text" name="title" class="form-control" placeholder="Tarea" >
+                    <strong>CAS:</strong>
+                    <input type="text" class="form-control" name="CAS" placeholder="CAS..." maxlength="13" pattern="[A-Za-z\s]+">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
                 <div class="form-group">
-                    <strong>Descripción:</strong>
-                    <textarea class="form-control" style="height:150px" name="description" placeholder="Descripción..."></textarea>
+                    <strong>Concentracio:</strong>
+                    <input type="number" class="form-control" name="concentracio" placeholder="Concentracio..." min="0" max="100" step="0.01">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 mt-2">
                 <div class="form-group">
-                    <strong>Fecha límite:</strong>
-                    <input type="date" name="due_date" class="form-control" id="">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 mt-2">
-                <div class="form-group">
-                    <strong>Estado (inicial):</strong>
+                    <strong>Conc. Tipus:</strong>
                     <select name="status" class="form-select" id="">
-                        <option value="">-- Elige el status --</option>
-                        <option value="Pendiente">Pendiente</option>
-                        <option value="En progreso">En progreso</option>
-                        <option value="Completada">Completada</option>
+                        <option value="Percentatge">Percentatge</option>
+                        <option value="Mols">Mols</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
+                <div class="form-group">
+                    <strong>Quantitat:</strong>
+                    <input type="number" class="form-control" name="quantitat" placeholder="Quantitat...">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 mt-2">
+                <div class="form-group">
+                    <strong>Motiu:</strong>
+                    <select name="status" class="form-select" id="">
+                        <option value="Practica">Pràctica</option>
+                        <option value="Regularitzacio">Regularització</option>
+                        <option value="Altres">Altres</option>
                     </select>
                 </div>
             </div>
