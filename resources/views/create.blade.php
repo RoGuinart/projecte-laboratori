@@ -35,12 +35,6 @@
                     </select>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
-                <div class="form-group">
-                    <strong>Quantitat:</strong>
-                    <input type="number" class="form-control" name="quantitat" placeholder="Quantitat...">
-                </div>
-            </div>
             <div class="col-xs-12 col-sm-12 col-md-6 mt-2">
                 <div class="form-group">
                     <strong>Motiu:</strong>
@@ -51,6 +45,13 @@
                     </select>
                 </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
+                <div class="form-group">
+                    <strong>Quantitat:</strong>
+                    <input type="number" class="form-control" name="quantitat" placeholder="Quantitat...">
+                </div>
+            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-2">
                 <button type="submit" class="btn btn-primary">Crear</button>
             </div>
