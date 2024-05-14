@@ -16,7 +16,7 @@ return new class extends Migration
             // TODO: Usuari
             $table->string('CAS', 13);
             $table->float('Concentracio');
-            $table->enum('Conc. Tipus', ['Percentatge', 'Mols']);
+            $table->enum('Tipus', ['Percentatge', 'Mols']);
             $table->integer('Quantitat');
             $table->date('Data');
             $table->enum('Motiu', ['Pràctica', 'Regularització', 'Altres']);
