@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('Quantitat');
             $table->date('Data');
             $table->enum('Motiu', ['Pràctica', 'Regularització', 'Altres']);
+            $table->timestamps();
         });
     }
 

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('CAS', 13)->primary(); // 12 per CAS + 1 per S/L
             $table->string('Nom');
             $table->text('FDS'); // URL
+            $table->timestamps();
         });
     }
 

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('Nom');
             $table->enum('Rol', ['Anònim', 'Estudiant', 'Professor']); // URL
+            $table->timestamps();
         });
     }
 

@@ -16,11 +16,12 @@ return new class extends Migration
             $table->float('Concentracio');
             $table->enum('Tipus', ['Percentatge', 'Mols']);
             $table->integer('Quantitat');
-            $table->date('Data Entrada');
-            $table->date('Data Caducitat');
+            $table->date('Data_Entrada');
+            $table->date('Data_Caducitat');
             //$table->enum('Armari', ...); TODO
-            $table->integer('Armari');
-            $table->primary(['CAS', 'Concentracio', 'Tipus', 'Data Caducitat']);
+            //$table->integer('Armari');
+            $table->timestamps();
+            $table->primary(['CAS', 'Concentracio', 'Tipus', 'Data_Caducitat']);
         });
     }
 
