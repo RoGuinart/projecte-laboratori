@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('stocks', function (Blueprint $table) {
+            $table->id();
             $table->string('CAS', 13); // 12 per CAS + 1 per S/L
             $table->float('Concentracio');
             $table->enum('Tipus', ['Percentatge', 'Mols']);
@@ -21,7 +22,7 @@ return new class extends Migration
             //$table->enum('Armari', ...); TODO
             //$table->integer('Armari');
             $table->timestamps();
-            $table->primary(['CAS', 'Concentracio', 'Tipus', 'Data_Caducitat']);
+            $table->unique(['CAS', 'Concentracio', 'Tipus', 'Data_Caducitat']);
         });
     }
 
