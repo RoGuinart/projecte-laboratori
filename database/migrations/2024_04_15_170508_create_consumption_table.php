@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('estoc', function (Blueprint $table) {
-            $table->string('CAS', 13); // 12 per CAS + 1 per S/L
+        Schema::create('consumption', function (Blueprint $table) {
+            $table->id();
+            // TODO: Usuari
+            $table->string('CAS', 13);
             $table->float('Concentracio');
             $table->enum('Tipus', ['Percentatge', 'Mols']);
             $table->integer('Quantitat');
-            $table->date('Data Entrada');
-            $table->date('Data Caducitat');
-            //$table->enum('Armari', ...); TODO
-            $table->integer('Armari');
-            $table->primary(['CAS', 'Concentracio', 'Tipus', 'Data Caducitat']);
+            $table->date('Data');
+            $table->enum('Motiu', ['Pràctica', 'Regularització', 'Altres']);
         });
     }
 

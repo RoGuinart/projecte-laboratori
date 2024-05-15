@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('consum', function (Blueprint $table) {
+        Schema::create('lab_users', function (Blueprint $table) {
+            // Potser no fa falta una taula d'usuaris, només els rols...
             $table->id();
-            // TODO: Usuari
-            $table->string('CAS', 13);
-            $table->float('Concentracio');
-            $table->enum('Tipus', ['Percentatge', 'Mols']);
-            $table->integer('Quantitat');
-            $table->date('Data');
-            $table->enum('Motiu', ['Pràctica', 'Regularització', 'Altres']);
+            $table->string('Nom');
+            $table->enum('Rol', ['Anònim', 'Estudiant', 'Professor']); // URL
         });
     }
 
