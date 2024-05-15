@@ -55,7 +55,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('product/update', ['product' => $product]);
     }
 
     /**
@@ -63,7 +63,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update($request->all());
+        return redirect()->
+            route('products.index')->with('success','Producte actualitzat');
     }
 
     /**
@@ -71,6 +73,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->
+            route('products.index')->with('success','Producte eliminat amb èxit.');
     }
 }

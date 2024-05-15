@@ -57,7 +57,7 @@ class StockController extends Controller
      */
     public function edit(Stock $stock)
     {
-        //
+        return view('stock/update', ['stock' => $stock]);
     }
 
     /**
@@ -65,6 +65,7 @@ class StockController extends Controller
      */
     public function update(Request $request, Stock $stock)
     {
+/*
         $request->validate([
             'CAS' => 'required',
             'Concentració' => 'required',
@@ -73,7 +74,7 @@ class StockController extends Controller
             'Data' => 'required',
             'Motiu' => 'required'
         ]);
-
+*/
         $stock->update($request->all());
         return redirect()->
             route('stocks.index')->with('success','Consum realitzat amb èxit');

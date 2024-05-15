@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->string('CAS', 13)->primary(); // 12 per CAS + 1 per S/L
+            $table->id();
+            $table->string('CAS', 13)->unique(); // 12 per CAS + 1 per S/L
             $table->string('Nom');
             $table->text('FDS'); // URL
             $table->timestamps();

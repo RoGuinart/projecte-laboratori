@@ -19,6 +19,7 @@
                 <th>Quantitat</th>
                 <th>Data d'entrada</th>
                 <th>Data de caducitat</th>
+                <th>Opcions</th>
             </tr>
 
             @foreach ($stock as $item)
@@ -28,6 +29,16 @@
                 <td>{{$item->Quantitat}} {{substr($item->CAS, -1) == 'S' ? 'g' : 'mL'}}</td>
                 <td>{{$item->Data_Entrada}}</td>
                 <td>{{$item->Data_Caducitat}}</td>
+
+                <td>
+                    <a href="{{route('stocks.edit', $item)}}" class="btn btn-warning">Editar</a>
+
+                    <form action="{{route('stocks.destroy', $item)}}" method="post" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
 
