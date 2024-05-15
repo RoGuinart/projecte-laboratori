@@ -4,39 +4,33 @@
 <div class="row">
     <div class="col-12">
         <div>
-            <h2 class="text-white">CRUD de Tareas</h2>
+            <h2 class="text-white">Stock de productes</h2>
         </div>
         <div>
-            <a href="{{route('stocks.create')}}" class="btn btn-primary">Crear tarea</a>
+            <a href="{{route('stocks.create')}}" class="btn btn-primary">Afegir producte</a>
         </div>
     </div>
 
     <div class="col-12 mt-4">
         <table class="table table-bordered text-white">
             <tr class="text-secondary">
-                <th>Tarea</th>
-                <th>Descripción</th>
-                <th>Fecha</th>
-                <th>Estado</th>
-                <th>Acción</th>
+                <th>CAS</th>
+                <th>Concentració</th>
+                <th>Quantitat</th>
+                <th>Data d'entrada</th>
+                <th>Data de caducitat</th>
             </tr>
-            <tr>
-                <td class="fw-bold">Estudiar Laravel</td>
-                <td>Ver video: tu primer CRUD con laravel 10 en el canal de YouDevs</td>
-                <td>
-                    31/03/23
-                </td>
-                <td>
-                    <span class="badge bg-warning fs-6">Pendiente</span>
-                </td>
-                <td>
-                    <a href="" class="btn btn-warning">Editar</a>
 
-                    <form action="" method="post" class="d-inline">
-                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                    </form>
-                </td>
+            @foreach ($stock as $item)
+            <tr>
+                <td class="fw-bold">{{$item->CAS}}</td>
+                <td>{{$item->Concentracio}}{{$item->Tipus == 'Percentatge' ? '%' : ' mols'}}</td>
+                <td>{{$item->Quantitat}} {{substr($item->CAS, -1) == 'S' ? 'g' : 'mL'}}</td>
+                <td>{{$item->Data_Entrada}}</td>
+                <td>{{$item->Data_Caducitat}}</td>
             </tr>
+            @endforeach
+
         </table>
     </div>
 </div>

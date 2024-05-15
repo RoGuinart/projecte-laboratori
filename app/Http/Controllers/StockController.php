@@ -12,7 +12,8 @@ class StockController extends Controller
      */
     public function index()
     {
-        return view('stock/index');
+        $stock = Stock::get();
+        return view('stock/index', ['stock' => $stock]);
     }
 
     /**
