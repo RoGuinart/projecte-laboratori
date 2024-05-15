@@ -7,7 +7,7 @@
             <h2 class="text-white">CRUD de Tareas</h2>
         </div>
         <div>
-            <a href="{{route('products.create')}}" class="btn btn-primary">Crear tarea</a>
+            <a href="{{route('stocks.create')}}" class="btn btn-primary">Crear tarea</a>
         </div>
     </div>
 

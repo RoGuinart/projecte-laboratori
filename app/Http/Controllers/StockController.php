@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Stock;
 use Illuminate\Http\Request;
 
 class StockController extends Controller
@@ -12,7 +12,7 @@ class StockController extends Controller
      */
     public function index()
     {
-        return view('index');
+        return view('stock/index');
     }
 
     /**
@@ -20,7 +20,7 @@ class StockController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('stock/create');
     }
 
     /**
@@ -28,14 +28,25 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($request->all());
-        return redirect()->route('products.index');
+/*
+        $request->validate([
+            'CAS' => 'required',
+            'Concentració' => 'required',
+            'Tipus Conc.' => 'required',
+            'Quantitat' => 'required',
+            'Data_Entrada' => 'required',
+            'Data_Caducitat' => 'required',
+        ]);
+*/
+        Stock::create($request->all());
+        return redirect()->
+            route('stocks.index')->with('success','Stock creat amb èxit');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(Stock $stock)
     {
         //
     }
@@ -43,7 +54,7 @@ class StockController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit(Stock $stock)
     {
         //
     }
@@ -51,16 +62,29 @@ class StockController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Stock $stock)
     {
-        //
+        $request->validate([
+            'CAS' => 'required',
+            'Concentració' => 'required',
+            'Tipus Conc.' => 'required',
+            'Quantitat' => 'required',
+            'Data' => 'required',
+            'Motiu' => 'required'
+        ]);
+
+        $stock->update($request->all());
+        return redirect()->
+            route('stocks.index')->with('success','Consum realitzat amb èxit');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy(Stock $stock)
     {
-        dd($product);
+        $stock->delete();
+        return redirect()->
+            route('stocks.index')->with('success','Stocke eliminat de l\'stock.');
     }
 }
